@@ -81,16 +81,42 @@ git push -u origin [custombranch]
 
 ### Create first feature branch
 
-* This branch add 2 changes
-    * In README.md
-    * New file feature-1.txt with random text
+#### Setup 
 
-* The commit message is 'feature 1'
+* This branch add 3 changes
+    * In README.md
+    * Create directory and:
+        * New file feature-1.txt with random text
+        * New image for explanation(master_with_feature_1)
+
+* The commit message is 'feature 1(B)'
 
 ```shell
-git switch -c feature-1 # Here is master
-echo "First commit with readme" > README.md
-git add . && git commit -m "Initial commit."
-git push -u origin [custombranch] 
+git switch -c feature-1 
+mkdir -p feature-1
+echo "First commit with readme" | tee README.md feature-1/feature-1.txt
+mv [anImage] feature-1
+git add . && git commit -m "feature 1(B)"
+git push -u origin feature-1 
 ```
 
+At thi stage we can represent what we have done:
+
+![master_feat_1](./feature-1/master_with_feature_1.png)
+
+#### Analyse git command in shell
+
+Here we have a diff!
+
+##### Two dot diff***
+
+> On git, we have the notion of ranges both on git log and git diff. So Git log A .. B, logs ev
+
+```shell
+git diff 
+mkdir -p feature-1
+echo "First commit with readme" | tee README.md feature-1/feature-1.txt
+mv [anImage] feature-1
+git add . && git commit -m "feature 1(B)"
+git push -u origin feature-1 
+```
