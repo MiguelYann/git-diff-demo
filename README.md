@@ -75,7 +75,22 @@ git remote set-url --add --push origin [gitlabURLRepo]
 ```shell
 git switch -c [custombranch] # Here is master
 echo "First commit with readme" > README.md
-git add . && git commit -m "Initial commit.(A)" # Please not A, we use it for diagram
+git add . && git commit -m "Initial commit.(A)"
+git push -u origin [custombranch] 
+```
+
+### Create first feature branch
+
+* This branch add 2 changes
+    * In README.md
+    * New file feature-1.txt with random text
+
+* The commit message is 'feature 1'
+
+```shell
+git switch -c feature-1 # Here is master
+echo "First commit with readme" > README.md
+git add . && git commit -m "Initial commit."
 git push -u origin [custombranch] 
 ```
 
